@@ -1,0 +1,47 @@
+mesh_files:
+  - r67
+bc_rules:
+  blade:
+    type: 2
+    keywords:
+      - ["blade"]
+  hub:
+    type: 2
+    keywords:
+      - ["hub"]
+  inflow:
+    type: 4
+    keywords:
+      - ["inflow"]
+      - ["inlet"]
+  inv_wall:
+    type: 1
+    keywords:
+      - ["wall", "inv"]
+  outflow:
+    type: 5
+    keywords:
+      - ["outflow"]
+      - ["outlet"]
+  period_lo:
+    type: 9
+    keywords:
+      - ["per", "lo"]
+      - ["per", "down"]
+      - ["periodic1"]
+  period_up:
+    type: 10
+    keywords:
+      - ["per", "up"]
+      - ["per", "hi"]
+      - ["periodic2"]
+  shroud:
+    type: 2
+    keywords:
+      - ["shroud"]
+      - ["casing"]
+      - ["case"]
+  visc_wall:
+    type: 2
+    keywords:
+      - ["wall"]

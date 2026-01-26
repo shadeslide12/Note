@@ -1,0 +1,196 @@
+##------------------------------------
+# Input file for zjui-pre
+# Note:
+#   1. Inset a SPACE after ":"
+#   2. Be careful with INDIENT and "-"
+##------------------------------------
+
+mg_levels: 1
+dimension: 3
+case_name: zjui
+num_mesh: 1
+mesh_files:
+  - r67
+
+# ---- Solver Options------
+set_annular: true
+unsteady: false
+flag_mixing_plane: false
+flag_sliding_plane: false
+flag_low_mach: false
+flag_append_hist: false
+
+# If flag_sliding_plane=true. Need to Setup:
+# 1: Whether to use initial flow from mixing plane result. 
+# 2: Sliding plane pairs. 
+#   Scroll down to see the BC id and setup sliding pair
+# 3: Periodic angle. 
+#   
+#num_passages:
+#  - 1
+#init_flow_mixing: true
+#init_flow_file: mixing.flow.hdf
+#interface_pairs:
+#  - [1, 2] 
+#  - [3, 4] 
+
+# ---- Turbulence Model------
+#  Choose turbulence type from: rans, les, des
+#  if rans, choose RANS model from: sa, ke, ko, ko
+#     Note: wall function only work with sa and ke
+#     Note: transit_model only work with ko
+turbulence_type: rans
+rans_model: sa
+#les_model: implicit
+#les_dt: 0.0001
+#les_dx: 0.0001
+#des_dx: 0.0001
+rans_wall_function: false
+rans_transit_model: false
+rans_qcr: none
+rans_helicity: false
+rans_kl: false
+rans_cmott: false
+
+# ---- Solver parameters ------
+iteration_number: 1000
+screen_print_step: 1
+CFL: 2.0
+CFL_ramp_up: 10
+file_write_step: 50
+residual_level: 15
+periodic_match_tol: 1.0000000000000001e-05
+#unsteady_period_time: 1.0
+#unsteady_n_period: 1.5
+#unsteady_n_step: 1800
+#unsteady_output_step: 100
+
+# ---- Coordinate transformation ------
+#  Set the scaling factor rotation axes of the turbomachinery,
+#   either scaling_factor
+#scale_factor: 1.0
+#   or setup x,y,z respectively.
+#scale_factor_x: 1.0
+#scale_factor_y: 1.0
+#scale_factor_z: 1.0
+
+# ---- Initial Conditions------
+#  Depending on the turbulence model, extra initial initial variables
+#      laminar: none
+#      sa     : sa_ic
+#      ke     : k_ic and e_ic
+#      ko      : k_ic and o_ic
+#      ko      : k_ic, o_ic, g_ic (with transit model)
+u_ic: 0.0
+v_ic: 0.0
+w_ic: 0.0
+rho_ic: 1.226
+p_ic: 101300.0
+sa_ic: 1.7616e-4
+#k_ic: 0.0
+#o_ic: 0.0
+#e_ic: 0.0
+#g_ic: 1.0
+
+# ---- Misc options, mostly for developers------
+solver_cfg: legacy
+
+# ---- Sources Options------
+flag_film_cool: false
+film_cool_type: boundary
+film_cool_config_file: FilmCoolingConfig.yaml
+
+# ==========================================
+# Boundary conditions details:
+
+# Note 1: It is not recommended to change the boundary type here
+#         better to modify at STEP 2 and run,
+#         It will re-generate the template which is easier to modify.
+
+# Note 2: When num_profile_** is changed
+#         ,the number of row of points_data** should change as well.
+
+#       points_data_in: 
+#         1       2        3         4       5     
+#         coord   T_total  P_total   α       β     
+#         6 and later:  turbulence model related parameters 
+#       points_data_out: 
+#         1       2         3 
+#         coord   P_static  T_total 
+# ==========================================
+
+r67:
+  zone_angular_velocity: 0
+  blade:
+    type: 2
+    wall_temperature: 0
+    wall_angular_velocity: 0
+  hub:
+    type: 2
+    wall_temperature: 0
+    wall_angular_velocity: 0
+  inflow:
+    type: 4
+    angular_velocity_in: 0
+    num_profile_in: 2
+    profile_distribution_in: 4
+    inlet_file: BC_files/r67-inflow-inlet.dat
+    points_data_in:
+      - [0, 0, 0, 0, 0, 0]
+      - [0, 0, 0, 0, 0, 0]
+  outflow:
+    type: 5
+    angular_velocity_out: 0
+    num_profile_out: 2
+    profile_distribution_out: 4
+    outlet_file: BC_files/r67-outflow-outlet.dat
+    points_data_out:
+      - [0, 0, 0]
+      - [0, 0, 0]
+  period_lo:
+    type: 9
+  period_up:
+    type: 10
+  shroud:
+    type: 2
+    wall_temperature: 0
+    wall_angular_velocity: 0
+
+
+
+#==========================
+## Boundary ID and names:
+# 1:  ZONE1:r67 blade
+# 2:  ZONE1:r67 hub
+# 3:  ZONE1:r67 inflow
+# 4:  ZONE1:r67 outflow
+# 5:  ZONE1:r67 period_lo
+# 6:  ZONE1:r67 period_up
+# 7:  ZONE1:r67 shroud
+ 
+#### Setup up monitors below
+#==========================
+
+num_monitors: 3
+monitor_list:
+  monitor_1:
+    type: 1
+    average_type: 2
+    face_id: 3
+    match_face_id: 4
+    output_step: 1
+    file_name: mon_perf.dat
+  monitor_2:
+    type: 1
+    average_type: 2
+    face_id: 3
+    match_face_id: 0
+    output_step: 1
+    file_name: mon_inlet.dat
+  monitor_3:
+    type: 1
+    average_type: 2
+    face_id: 4
+    match_face_id: 0
+    output_step: 1
+    file_name: mon_outlet.dat

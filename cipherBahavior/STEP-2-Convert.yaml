@@ -1,0 +1,50 @@
+num_mesh: 1
+mesh_files:
+  - r67
+unsteady: false
+set_annular: true
+mg_levels: 1
+turbulence_type: rans
+rans_model: sa
+scale_factor: 1.0
+rotation_axis_x: 1.0
+rotation_axis_y: 0.0
+rotation_axis_z: 0.0
+flag_film_cool: false
+film_cool_type: boundary
+film_cool_config_file: FilmCoolingConfig.yaml
+r67:
+  bc_subgroup: true
+  file_type: cgns
+  boundary_conditions:
+    blade:
+      type: 2
+      subfaces:
+        - 7:r67:r67:row_1_main_blade_1
+        - 8:r67:r67:row_1_main_blade_2
+        - 9:r67:r67:row_1_main_blade_3
+        - 10:r67:r67:row_1_main_blade_4
+    hub:
+      type: 2
+      subfaces:
+        - 1:r67:r67:hub
+    inflow:
+      type: 4
+      subfaces:
+        - 2:r67:r67:inflow
+    outflow:
+      type: 5
+      subfaces:
+        - 3:r67:r67:outflow
+    period_lo:
+      type: 9
+      subfaces:
+        - 5:r67:r67:periodic_lo
+    period_up:
+      type: 10
+      subfaces:
+        - 4:r67:r67:periodic_hi
+    shroud:
+      type: 2
+      subfaces:
+        - 6:r67:r67:shroud

@@ -14,17 +14,6 @@
  - 用户根据需要设置yaml里面的选项，内部如[STEP3.YAML](./STEP-3-Setup.yaml) 所示。
  #### 4. solver run:需要的输入文件 zjui.cfg , zjui.flow.hdf ,zjui.grid.hdf. 
  
- 在文件夹下放入cgns 或者 cas文件 以及 STEP1.yaml，然后编辑修改STEP1.yaml(用于定义)
- -
-1. 准备好网格文件（**cas.h5** 或者 **cgns**)，生成 **STEP-1-Config.yaml**（GUI）/ 创建编辑 **STEP-1-Config.yaml**（TUI）
-2. 调用 ```cipher-pre step1```，将原始网格文件转换为中间网格文件 （**aes.h5**），根据 **STEP-1-Config.yaml** 生成 **STEP-2-Convert.yaml** 模板文件
-3. 编辑并保存**STEP-2-Convert.yaml**
-4. 运行 ```cipher-pre step2```， 读取 **STEP-2-Convert.yaml**  和中间网格文件 （**aes.h5**）生成**STEP-3-Convert.yaml**
-5. 运行 ```cipher-pre step3```， 读取 **STEP-3-Convert.yaml**  和中间网格文件 （**aes.h5**）生成 ```cipher.cfg``` 文件，首先生成按照 zone 分开存储的 **zone.h5** 文件，随后把 **zone.h5**文件中各zone连接求解器所需网格文件 (**grid.h5**)  和流场文件 (**flow.h5**)
-6. 编辑 ```cipher.cfg```  文件并运行求解器 **cipher-solver**
-7. 使用```cipher-tools``` 将所有网格和流场文件转换为后处理可用的 **cgns** 文件
-
-
 ## 3.GUI
  - 
  -

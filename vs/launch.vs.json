@@ -1,0 +1,18 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "cfd_post.exe (bin\\cfd_post.exe)",
+      "name": "cfd_post.exe (bin\\cfd_post.exe)",
+      "environment": [
+        {
+          "name": "PATH",
+          "value": "D:\\Compile\\Qt_Win\\5.15.2\\msvc2019_64\\bin;D:\\Compile_Libs\\VTK\\9.1.0\\x64_release_new\\bin;D:\\Compile_Libs\\Zlib\\1.3.1\\x64_release_new\\bin;D:\\Compile_Libs\\HDF5\\1.12.2\\x64_Release_new\\bin;%PATH%"
+        }
+      ]
+    }
+  ]
+}

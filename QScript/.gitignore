@@ -1,0 +1,47 @@
+# 构建目录和产物
+build/
+bin/
+lib/
+*.exe
+*.out
+*.app
+
+# CMake 生成的文件
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Qt 生成的文件
+*_autogen/
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*.qm
+
+# 编译产物
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# IDE 和编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 测试结果
+Testing/
+*.log
+
+# 依赖下载
+_deps/

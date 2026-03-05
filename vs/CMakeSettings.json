@@ -1,0 +1,26 @@
+﻿{
+  "configurations": [
+    {
+      "name": "x64-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "-DHDF5_ROOT:PATH=D:\\\\Compile_Libs\\\\HDF5\\\\1.12.2\\\\x64_Release_new -DVTK_DIR:PATH=D:\\\\Compile_Libs\\\\VTK\\\\9.1.0\\\\x64_release_new\\\\lib\\\\cmake\\\\vtk-9.1 -DQt5_DIR:PATH=D:\\Compile\\Qt_Win\\5.15.2\\msvc2019_64\\lib\\cmake\\Qt5",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": ""
+    },
+    {
+      "name": "x64-Release",
+      "generator": "Ninja",
+      "configurationType": "RelWithDebInfo",
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "cmakeCommandArgs": "-DHDF5_ROOT:PATH=D:\\\\Compile_Libs\\\\HDF5\\\\1.12.2\\\\x64_Release_new -DVTK_DIR:PATH=D:\\\\Compile_Libs\\\\VTK\\\\9.1.0\\\\x64_release_new\\\\lib\\\\cmake\\\\vtk-9.1 -DQt5_DIR:PATH=D:\\Compile\\Qt_Win\\5.15.2\\msvc2019_64\\lib\\cmake\\Qt5"
+    }
+  ]
+}

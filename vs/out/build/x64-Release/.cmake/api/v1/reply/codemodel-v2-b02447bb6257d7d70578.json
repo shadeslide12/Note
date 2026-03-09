@@ -1,0 +1,149 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "lib",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib-RelWithDebInfo-abe1587271bad0f11f3a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "lib",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-RelWithDebInfo-b0adb3417689a00793c8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "CFD_POST",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "cfd_post::@145eef247bfb46b6828c",
+					"jsonFile" : "target-cfd_post-RelWithDebInfo-8ee922a63e6663144416.json",
+					"name" : "cfd_post",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "cfd_post_autogen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-cfd_post_autogen-RelWithDebInfo-02e2acf64f528d1d7036.json",
+					"name" : "cfd_post_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "cfd_post_autogen_timestamp_deps::@145eef247bfb46b6828c",
+					"jsonFile" : "target-cfd_post_autogen_timestamp_deps-RelWithDebInfo-f3f2ac29343647044560.json",
+					"name" : "cfd_post_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "post_base_lib::@306ed2d68c6501e8728f",
+					"jsonFile" : "target-post_base_lib-RelWithDebInfo-3ac4a150bc53cb96fee4.json",
+					"name" : "post_base_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qt_post::@145eef247bfb46b6828c",
+					"jsonFile" : "target-qt_post-RelWithDebInfo-aa721e3f3d32908383c7.json",
+					"name" : "qt_post",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qt_post_autogen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-qt_post_autogen-RelWithDebInfo-644f83cff7a985cab56e.json",
+					"name" : "qt_post_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "qt_post_autogen_timestamp_deps::@145eef247bfb46b6828c",
+					"jsonFile" : "target-qt_post_autogen_timestamp_deps-RelWithDebInfo-1b8848b57832ba1474ee.json",
+					"name" : "qt_post_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "F:/Linux_Files/ZJU/zjui-post/out/build/x64-Release",
+		"source" : "F:/Linux_Files/ZJU/zjui-post"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

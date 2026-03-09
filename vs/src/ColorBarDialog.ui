@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ColorBarDialog</class>
+ <widget class="QDialog" name="ColorBarDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>550</width>
+    <height>763</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Contour &amp; Legend Settings</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="contourTab">
+      <attribute name="title">
+       <string>Contour</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="contourTabLayout">
+       <item>
+        <widget class="QGroupBox" name="variableGroupBox">
+         <property name="title">
+          <string>Variable Selection</string>
+         </property>
+         <layout class="QFormLayout" name="variableFormLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelParameterName">
+            <property name="text">
+             <string>Parameter Name:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="nameComboBox">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelParameterRange">
+            <property name="text">
+             <string>Data Range:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="textParameterRange">
+            <property name="styleSheet">
+             <string>QLabel { color: #0066cc; font-weight: bold; }</string>
+            </property>
+            <property name="text">
+             <string>[Min, Max]</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="colorRangeGroupBox">
+         <property name="title">
+          <string>Color Range</string>
+         </property>
+         <layout class="QFormLayout" name="colorRangeFormLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="lableColorBarmin">
+            <property name="text">
+             <string>Minimum:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="textColorBarmin">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Enter minimum value</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelColorBarmax">
+            <property name="text">
+             <string>Maximum:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="textColorBarMax">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Enter maximum value</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelColorNumber">
+            <property name="text">
+             <string>Number of Colors:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="textColorNumber">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>10</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="colorMapGroupBox">
+         <property name="title">
+          <string>Color Map Options</string>
+         </property>
+         <layout class="QVBoxLayout" name="colorMapLayout">
+          <item>
+           <widget class="QLabel" name="labelColorMapPreset">
+            <property name="text">
+             <string>Select a color map from presets:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboColorMapPreset">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>200</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkReverseColorMap">
+            <property name="text">
+             <string>Reverse Color Map</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="contourVerticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="legendTab">
+      <attribute name="title">
+       <string>Legend</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="legendTabLayout">
+       <item>
+        <widget class="QGroupBox" name="showLegendGroupBox">
+         <property name="title">
+          <string>Legend Display</string>
+         </property>
+         <layout class="QVBoxLayout" name="showLegendLayout">
+          <item>
+           <widget class="QCheckBox" name="checkShowLegend">
+            <property name="text">
+             <string>Show Color Legend</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="legendSizeGroupBox">
+         <property name="title">
+          <string>Size and Position</string>
+         </property>
+         <layout class="QFormLayout" name="legendSizeFormLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelScalarBarWidth">
+            <property name="text">
+             <string>Width:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="textScalarBarWidth">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>0.1 </string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelScalarBarHeight">
+            <property name="text">
+             <string>Height:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="textScalarBarHeight">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>0.8 </string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelLegendX">
+            <property name="text">
+             <string>X Position (%):</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="textLegendXPosition">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>90</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="labelLegendY">
+            <property name="text">
+             <string>Y Position (%):</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="textLegendYPosition">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>10</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="legendOrientationGroupBox">
+         <property name="title">
+          <string>Orientation</string>
+         </property>
+         <layout class="QHBoxLayout" name="orientationLayout">
+          <item>
+           <widget class="QRadioButton" name="radioVertical">
+            <property name="text">
+             <string>Vertical</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioHorizontal">
+            <property name="text">
+             <string>Horizontal</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="textAppearanceGroupBox">
+         <property name="title">
+          <string>Text Appearance</string>
+         </property>
+         <layout class="QFormLayout" name="textAppearanceFormLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelTextColor">
+            <property name="text">
+             <string>Text Color:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <layout class="QHBoxLayout" name="textColorLayout">
+            <item>
+             <widget class="QPushButton" name="btnTextColor">
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string>QPushButton { background-color: black; color: white; }</string>
+              </property>
+              <property name="text">
+               <string>Black</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="textColorSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelFontSize">
+            <property name="text">
+             <string>Font Size:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="spinFontSize">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="minimum">
+             <number>8</number>
+            </property>
+            <property name="maximum">
+             <number>48</number>
+            </property>
+            <property name="value">
+             <number>16</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelFontFamily">
+            <property name="text">
+             <string>Font type:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="comboFontFamily">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>30</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Arial</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Times New Roman</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Courier New</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Helvetica</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="labelFontStyle">
+            <property name="text">
+             <string>Font Style:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <layout class="QHBoxLayout" name="fontStyleLayout">
+            <item>
+             <widget class="QCheckBox" name="checkBold">
+              <property name="text">
+               <string>Bold</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="checkItalic">
+              <property name="text">
+               <string>Italic</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="legendTitleGroupBox">
+         <property name="title">
+          <string>Legend Title</string>
+         </property>
+         <layout class="QVBoxLayout" name="legendTitleLayout">
+          <item>
+           <widget class="QCheckBox" name="checkShowTitle">
+            <property name="text">
+             <string>Show Title</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="titleModeLayout">
+            <item>
+             <widget class="QLabel" name="labelTitleMode">
+              <property name="text">
+               <string>Title Mode:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboTitleMode">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>30</height>
+               </size>
+              </property>
+              <item>
+               <property name="text">
+                <string>Use Variable Name</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Use Custom Text</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="titleTextLayout">
+            <item>
+             <widget class="QLabel" name="labelTitleText">
+              <property name="text">
+               <string>Custom Title:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="textTitleText">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="placeholderText">
+               <string>Enter custom text</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="legendVerticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ColorBarDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ColorBarDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

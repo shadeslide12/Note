@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"F:/Linux_Files/ZJU/zjui-post/out/build/x64-Debug/cmake_install.cmake",
+		"F:/Linux_Files/ZJU/zjui-post/out/build/x64-Debug/lib/cmake_install.cmake",
+		"F:/Linux_Files/ZJU/zjui-post/out/build/x64-Debug/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+2 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "F:/Linux_Files/ZJU/zjui-post/out/build/x64-Release/lib/CMakeFiles/post_base_lib.dir/embed.manifest"

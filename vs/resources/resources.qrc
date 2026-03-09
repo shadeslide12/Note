@@ -1,0 +1,27 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file>PostIcons/boundbox.png</file>
+        <file>PostIcons/colorbar.png</file>
+        <file>PostIcons/contour.png</file>
+        <file>PostIcons/cutplane.png</file>
+        <file>PostIcons/invisible.png</file>
+        <file>PostIcons/isoContour.png</file>
+        <file>PostIcons/isoSurface.png</file>
+        <file>PostIcons/mesh.png</file>
+        <file>PostIcons/open.png</file>
+        <file>PostIcons/orient_axes.png</file>
+        <file>PostIcons/streamline.png</file>
+        <file>PostIcons/text.png</file>
+        <file>PostIcons/vector.png</file>
+        <file>PostIcons/visible.png</file>
+        <file>PostIcons/calculator.png</file>
+        <file>PostIcons/newwindow.png</file>
+    </qresource>
+    <qresource>
+        <file>PostIcons/xoy.png</file>
+        <file>PostIcons/xoz.png</file>
+        <file>PostIcons/yoz.png</file>
+        <file>PostIcons/xyz.png</file>
+    </qresource>
+</RCC>
